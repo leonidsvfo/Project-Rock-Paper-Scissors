@@ -21,8 +21,37 @@ console.log(getComputerChoise())
 */
 
 function getComputerChoise() {
-    const result = Math.random() * 3 + 1; 
-    return Math.floor(result);
+    const result = Math.floor(Math.random() * 3 + 1);
+    switch (result) {
+        case 1:
+            console.log("Rock");
+            break;
+        case 2:
+            console.log("Paper");
+            break;
+        case 3:
+            console.log("Scissors");
+            break;
+    }
+    return result
 }
 
-console.log(getComputerChoise())
+function getHumanChoice() {
+    const result = prompt("Rock, Paper or Scissors?", "").toLowerCase();
+    switch (result) {
+        case "rock":
+            console.log("You choose Rock");
+        break;
+        case "paper":
+            console.log("You choose Paper");
+        break;
+        case "scissors":
+            console.log("You choose Scissors");
+        break;
+        default:
+            console.log("Invalid choice");
+    }
+    return result
+}
+
+
