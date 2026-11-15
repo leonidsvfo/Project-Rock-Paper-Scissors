@@ -61,23 +61,16 @@ function playRound (humanChoice, computerChoice) {
     } else if (humanChoice === "scissors" && computerChoice === "scissors") {
         console.log("Parity")
     } else if (humanChoice === "rock" && computerChoice === "paper") {
-        console.log("You Lose")
+        console.log("You Lose, Paper beats Rock")
     } else if (humanChoice === "paper" && computerChoice === "rock") {
-        console.log("You Win!")
+        console.log("You Win! Paper beats Rock")
     } else if (humanChoice === "scissors" && computerChoice === "paper") {
-        console.log("You Win!")
+        console.log("You Win! Scissors beats paper")
     } else if (humanChoice === "paper" && computerChoice === "scissors") {
-        console.log("You Lose")
+        console.log("You Lose, Scissors beats paper")
     } else if (humanChoice === "scissors" && computerChoice === "rock") {
-        console.log("You Lose")
-    } else if (humanChoice === "rock" && computerChoice === "scissors") {
-        console.log("You Win!")
+        console.log("You Lose, Rock beats Scissors")
+    } else (humanChoice === "rock" && computerChoice === "scissors") {
+        console.log("You Win! Rock beats Scissors")
     }
 }    
-
-
-/*
-git fix: removed console.log in getHumanChoice function 
-fix: removed console.log in getComputerChoice function 
-add: argument in getComputerChoice "pcChoice"
-*/
