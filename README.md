@@ -4,7 +4,7 @@ This is my first JavaScript project!
 
 The game runs entirely in the console:
 
-- To start the game, type this in the console: `console.log(playGame());`
+- To start the game, type this in the console: `playGame()`
 - There are 5 rounds in one game.
 - You play against the computer, which makes random choices.
 - When the game is over, you need to refresh the page to play again.
