@@ -1,21 +1,3 @@
-/*
-
-Pseudocode of Rock, Paper, Scissors:
-
-1. The console pick a random decision between Rock, Paper and scissors, that should be invisible to the player:
-2. The player should choice between Rock, Paper and Scissors;
-3. Rock beats scissors;
-4. paper beats rock
-4. scissors beat paper;
-5. rock rock parity
-6. paper paper parity
-7. scissors scissor parity
-8. The winner should be shown once you pick your choice;
-
-
-
-*/
-
 // initial plater and computer scores
 let humanScore = 0;
 let computerScore = 0;
@@ -59,11 +41,11 @@ function playRound (humanChoice, computerChoice) {
     humanChoice = getHumanChoice();
     computerChoice = getComputerChoise();
     if (humanChoice === "rock" && computerChoice === "rock") {
-        console.log("Parity")
+        console.log("Tie")
     } else if (humanChoice === "paper" && computerChoice === "paper") {
-        console.log("Parity")
+        console.log("Tie")
     } else if (humanChoice === "scissors" && computerChoice === "scissors") {
-        console.log("Parity")
+        console.log("Tie")
     } else if (humanChoice === "rock" && computerChoice === "paper") {
         ++computerScore && console.log(`You Lose, Paper beats Rock! Player Score: ${humanScore} Computer Score: ${computerScore}`);
     } else if (humanChoice === "paper" && computerChoice === "rock") {
