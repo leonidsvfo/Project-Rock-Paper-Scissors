@@ -81,14 +81,12 @@ function playRound (humanChoice, computerChoice) {
 
 // the gameplay, the function would declare a winner after 5 rounds
 function playGame () {
-    let result = humanScore + computerScore
-    playRound();
-    while(result < 5) {
+    while(humanScore + computerScore < 5) {
         playRound()
     }
-    if (result = 5 && humanScore > computerScore) {
+    if (humanScore > computerScore) {
         console.log(`Game Over, You Win! Player Score: ${humanScore} Computer Score: ${computerScore}`);
-    } else if (result = 5 && humanScore < computerScore) {
+    } else if (humanScore < computerScore) {
         console.log(`Game Over, You Lose! Player Score: ${humanScore} Computer Score: ${computerScore}`);
     }
     }
