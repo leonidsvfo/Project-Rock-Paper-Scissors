@@ -16,8 +16,8 @@ Pseudocode of Rock, Paper, Scissors:
 
 */
 
-const humanScore = 0;
-const computerScore = 0;
+let humanScore = 0;
+let computerScore = 0;
 
 function getComputerChoise(pcChoice) {
     const caseNumber = Math.floor(Math.random() * 3 + 1);
@@ -61,16 +61,16 @@ function playRound (humanChoice, computerChoice) {
     } else if (humanChoice === "scissors" && computerChoice === "scissors") {
         console.log("Parity")
     } else if (humanChoice === "rock" && computerChoice === "paper") {
-        console.log("You Lose, Paper beats Rock")
+        ++computerScore && console.log(`You Lose, Paper beats Rock! Player Score: ${humanScore} Computer Score: ${computerScore}`);
     } else if (humanChoice === "paper" && computerChoice === "rock") {
-        console.log("You Win! Paper beats Rock")
+        ++humanScore (`You Win! Paper beats Rock! Player Score: ${humanScore} Computer Score: ${computerScore}`);
     } else if (humanChoice === "scissors" && computerChoice === "paper") {
-        console.log("You Win! Scissors beats paper")
+        ++humanScore && console.log(`You Win! Scissors beats paper!  Player Score: ${humanScore} Computer Score: ${computerScore}`);
     } else if (humanChoice === "paper" && computerChoice === "scissors") {
-        console.log("You Lose, Scissors beats paper")
+        ++computerScore && console.log(`You Lose, Scissors beats paper! Player Score: ${humanScore} Computer Score: ${computerScore}`);
     } else if (humanChoice === "scissors" && computerChoice === "rock") {
-        console.log("You Lose, Rock beats Scissors")
-    } else (humanChoice === "rock" && computerChoice === "scissors") {
-        console.log("You Win! Rock beats Scissors")
+        ++computerScore && console.log(`You Lose, Rock beats Scissors! Player Score: ${humanScore} Computer Score: ${computerScore}`);
+    } else if (humanChoice === "rock" && computerChoice === "scissors") {
+        ++humanScore && console.log(`You Win! Rock beats Scissors! Player Score: ${humanScore} Computer Score: ${computerScore}`);
     }
 }    
