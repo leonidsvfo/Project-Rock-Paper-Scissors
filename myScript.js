@@ -1,7 +1,9 @@
 // initial plater and computer scores
 let humanScore = 0;
 let computerScore = 0;
-
+let resultRound = ''
+let result = document.querySelector('.result');
+result.style.color = 'red';
 
 // random pc choice between rock, paper and scissors
 function getComputerChoise(pcChoice) {
@@ -20,47 +22,53 @@ function getComputerChoise(pcChoice) {
     return pcChoice
 }
 
-// user text choice between rock, paper and scissor (you can use both lowercase or uppurcase as text input)
-function getHumanChoice() {
-    const result = prompt("Rock, Paper or Scissors?", "").toLowerCase();
-    switch (result) {
-        case "rock":
-        break;
-        case "paper":
-        break;
-        case "scissors":
-        break;
-        default:
-            console.log("Invalid choice");
-    }
-    return result
-}
+// user choice between rock, paper and scissor with three buttons
+const rock = document.querySelector('.rock');
+rock.addEventListener('click', () => {
+    getHumanChoice = 'rock'
+    playRound('rock');
+    result.textContent = resultRound;
+});
+const paper = document.querySelector('.paper');
+paper.addEventListener('click', () => {
+    getHumanChoice = 'paper'
+    playRound('paper');
+    result.textContent = resultRound;
+});
+const scissors = document.querySelector('.scissors');
+scissors.addEventListener('click', () => {
+    getHumanChoice = 'scissors'
+    playRound('scissors');
+    result.textContent = resultRound;
+});
 
-// one round of the game: after pc and the player choice, this function would add a score to the winner according to the game rules
-function playRound (humanChoice, computerChoice) {
-    humanChoice = getHumanChoice();
+
+// one round of the game: this function would add a score to the winner according to the game rules
+
+function playRound (getHumanChoice, computerChoice) {
     computerChoice = getComputerChoise();
-    if (humanChoice === computerChoice) {
-        console.log("Tie")
-    } else if (humanChoice === "rock" && computerChoice === "paper" ||
-            humanChoice === "paper" && computerChoice === "scissors" ||
-            humanChoice === "scissors" && computerChoice === "rock") {
-        ++computerScore && console.log(`You Lose, Paper beats Rock! Player Score: ${humanScore} Computer Score: ${computerScore}`);
-    } else if (humanChoice === "paper" && computerChoice === "rock" ||
-            humanChoice === "scissors" && computerChoice === "paper" ||
-            humanChoice === "rock" && computerChoice === "scissors") {
-        ++humanScore && console.log(`You Win! Paper beats Rock! Player Score: ${humanScore} Computer Score: ${computerScore}`);
+    if (getHumanChoice === computerChoice) {
+        resultRound = "Tie";
+    } else if (getHumanChoice === "rock" && computerChoice === "paper" ||
+            getHumanChoice === "paper" && computerChoice === "scissors" ||
+            getHumanChoice === "scissors" && computerChoice === "rock") {
+        ++computerScore; 
+        resultRound = `You Lose, ${computerChoice} beats ${getHumanChoice}! Player Score: ${humanScore} Computer Score: ${computerScore}`;
+    } else if (getHumanChoice === "paper" && computerChoice === "rock" ||
+            getHumanChoice === "scissors" && computerChoice === "paper" ||
+            getHumanChoice === "rock" && computerChoice === "scissors") {
+        ++humanScore; 
+        resultRound = `You Win! ${getHumanChoice} beats ${computerChoice}! Player Score: ${humanScore} Computer Score: ${computerScore}`;
+    }
+    if ((humanScore + computerScore === 5) && humanScore > computerScore) {
+        resultRound = `Game Over, You Win! Player Score: ${humanScore} Computer Score: ${computerScore}`;
+    } else if ((humanScore + computerScore === 5) && humanScore < computerScore) {
+        resultRound =`Game Over, You Lose! Player Score: ${humanScore} Computer Score: ${computerScore}`;
+    } else if (humanScore + computerScore > 5) {
+        window.location.reload();
     }
 }
 
 // the gameplay, the function would declare a winner after 5 rounds
-function playGame () {
-    while(humanScore + computerScore < 5) {
-        playRound()
-    }
-    if (humanScore > computerScore) {
-        console.log(`Game Over, You Win! Player Score: ${humanScore} Computer Score: ${computerScore}`);
-    } else if (humanScore < computerScore) {
-        console.log(`Game Over, You Lose! Player Score: ${humanScore} Computer Score: ${computerScore}`);
-    }
-}
+
+
