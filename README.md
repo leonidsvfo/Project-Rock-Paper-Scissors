@@ -1,8 +1,7 @@
 # Project: Rock-Paper-Scissors
 
 This is my first JavaScript project!
-
-The game runs entirely in the console:
+The site to play: https://leonidsvfo.github.io/Project-Rock-Paper-Scissors/
 
 - To start the game, just click on one button!
 - There are 5 rounds in one game.
